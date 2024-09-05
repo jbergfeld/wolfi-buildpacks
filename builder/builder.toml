@@ -1,0 +1,17 @@
+# Sample Builder using the Paketo NodeJS buildpack on the Wolfi Stack.
+
+[[buildpacks]]
+uri = "docker://gcr.io/paketo-buildpacks/nodejs:3.0.2"
+
+[[order]]
+	[[order.group]]
+	id = "paketo-buildpacks/nodejs"
+	version = "3.0.2"
+
+[build]
+image = "cnbs/base-image:wolfi"
+
+[run]
+[[run.images]]
+image = "cnbs/run-image:wolfi"
+
